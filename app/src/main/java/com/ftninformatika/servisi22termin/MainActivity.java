@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements MyBoundService.Te
     boolean bound = false;
     TextView textView;
 
+    private int a = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,9 @@ public class MainActivity extends AppCompatActivity implements MyBoundService.Te
 
 
     private void testService() {
-        myBoundService.getVoce(2);
+        int x = a % 3;
+        myBoundService.getVoce(x);
+        a++;
     }
 
 
